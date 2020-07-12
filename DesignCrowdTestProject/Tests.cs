@@ -48,5 +48,17 @@ namespace DesignCrowdTestProject
             int weekdays = BusinessDayCounter.BusinessDaysBetweenTwoDates(first, second, pList);
             Assert.AreEqual(weekdays, 59);
         }
+
+        [Test]
+        public void TestRulesWithAndWithoutCarryOver()
+        {
+            DateTime first = new DateTime(2020,7, 9);
+            DateTime second = new DateTime(2020, 7, 16);
+            List<PublicHolidayRule> pList = new List<PublicHolidayRule>();
+            pList.Add(new PublicHolidayRule(7, DayOfWeek.Sunday, 2, true ));
+            pList.Add(new PublicHolidayRule(7, 10 , false));
+            int weekdays = BusinessDayCounter.BusinessDaysBetweenTwoDates(first, second, pList);
+            Assert.AreEqual(weekdays, 2);
+        }
     }
 }

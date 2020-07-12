@@ -26,18 +26,52 @@ namespace DesignCrowdTechChallenge
 
         public DateTime GetDateTime(int year)
         {
-            if (IsFixed)
+            if (IsFixed && !CarryOverDay)
+            {
                 return new DateTime(year, Month, Day);
+            }
+            else if (IsFixed && CarryOverDay)
+            {
+                var startDate = new DateTime(year, Month, Day);
+                if (startDate.DayOfWeek == DayOfWeek.Saturday)
+                    return startDate.AddDays(2);
+                else if (startDate.DayOfWeek == DayOfWeek.Sunday)
+                    return startDate.AddDays(1);
+                else return startDate;
+
+            }
+            //above for fixed occurences
             else
             {
                 DateTime date = new DateTime(year, Month, 01);
-                int startDayOfWeek = (int)date.DayOfWeek;
-                date = date.AddDays((int)DayOfWeekRule - startDayOfWeek); //gets first occurence of day of week
+                int startDayOfWeek = date.DayOfWeek == DayOfWeek.Sunday ? 7 : (int)date.DayOfWeek;
+                int dayOfWeekRuleInt = DayOfWeekRule == DayOfWeek.Sunday ? 7 : (int)DayOfWeekRule;
+                int additionalDays = dayOfWeekRuleInt - startDayOfWeek;
+                date = date.AddDays(additionalDays); //gets first occurence of day of week
                 if (Occurence == 1)//returns first occurrence 
-                    return date;
+                {
+                    if (CarryOverDay)
+                    {
+                        if (date.DayOfWeek == DayOfWeek.Saturday)
+                            return date.AddDays(2);
+                        else if (date.DayOfWeek == DayOfWeek.Sunday)
+                            return date.AddDays(1);
+                        else return date;
+                    }
+                    else return date;
+                }
                 else
                 {
-                    return date.AddDays(7 * (Occurence - 1));//places a great deal of trust in user, could be remedied by doing a for loop
+                    date = date.AddDays(7 * (Occurence - 1));//places a great deal of trust in user, could be remedied by doing a for loop
+                    if (CarryOverDay)
+                    {
+                        if (date.DayOfWeek == DayOfWeek.Saturday)
+                            return date.AddDays(2);
+                        else if (date.DayOfWeek == DayOfWeek.Sunday)
+                            return date.AddDays(1);
+                        else return date;
+                    }
+                    else return date;
                 }
             }
         }
