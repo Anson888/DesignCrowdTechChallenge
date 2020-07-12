@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignCrowdTechChallenge
 {
-    class BusinessDayCounter
+    public class BusinessDayCounter
     {
         public int WeekdaysBetweenTwoDates(DateTime firstDate, DateTime secondDate)
         {
@@ -44,7 +44,8 @@ namespace DesignCrowdTechChallenge
             {
                 if (firstDate.Year == secondDate.Year)
                     publicHolidays.Add(publicHolidayRule.GetDateTime(firstDate.Year));
-                else { 
+                else
+                {
                     publicHolidays.Add(publicHolidayRule.GetDateTime(firstDate.Year));
                     publicHolidays.Add(publicHolidayRule.GetDateTime(secondDate.Year));
                 }

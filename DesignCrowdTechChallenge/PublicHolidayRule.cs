@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignCrowdTechChallenge
 {
-    class PublicHolidayRule
+    public class PublicHolidayRule
     {
 
         public PublicHolidayRule(int month, int date, bool carryOverDay)

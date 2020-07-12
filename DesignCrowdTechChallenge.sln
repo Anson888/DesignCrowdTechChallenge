@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignCrowdTechChallenge", "DesignCrowdTechChallenge\DesignCrowdTechChallenge.csproj", "{0ED0C46B-8C36-4730-8D9F-FE637CD763E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignCrowdTechChallenge", "DesignCrowdTechChallenge\DesignCrowdTechChallenge.csproj", "{0ED0C46B-8C36-4730-8D9F-FE637CD763E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignCrowdTestProject", "DesignCrowdTestProject\DesignCrowdTestProject.csproj", "{00AE4A21-661C-4928-B37E-499391D1EFC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0ED0C46B-8C36-4730-8D9F-FE637CD763E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ED0C46B-8C36-4730-8D9F-FE637CD763E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ED0C46B-8C36-4730-8D9F-FE637CD763E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00AE4A21-661C-4928-B37E-499391D1EFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00AE4A21-661C-4928-B37E-499391D1EFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00AE4A21-661C-4928-B37E-499391D1EFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00AE4A21-661C-4928-B37E-499391D1EFC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
